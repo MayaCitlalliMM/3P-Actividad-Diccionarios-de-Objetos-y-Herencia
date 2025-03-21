@@ -15,17 +15,44 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
 
         public void addCoche()
         {
-            Console.WriteLine("Dame matricula: ");
-            int id1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame matricula");
+            int iD1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame id");
+            vco.Id_vehiculo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame Marca");
+            vco.Marca = Console.ReadLine();
+            Console.WriteLine("Dame Modelo");
+            vco.Modelo = Console.ReadLine();
+            Console.WriteLine("Dame Año");
+            vco.Anio = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame Número de puertas");
+            vco.NoPuertas = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame Color");
+            vco.Color = Console.ReadLine();
 
-            diccionariocoche.Add(id1,new VehiculoCoche(vco.Id_vehiculo,vco.Marca,vco.Modelo,vco.Anio,vco.NoPuertas));
+
+
+            diccionariocoche.Add(iD1,new VehiculoCoche(vco.Id_vehiculo,vco.Marca,vco.Modelo,vco.Anio,vco.NoPuertas,vco.Color));
         }
         public void addCamion()
         {
             Console.WriteLine("Dame matricula: ");
             int id2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame id:");
+            vca.Id_vehiculo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame Marca");
+            vca.Marca = Console.ReadLine();
+            Console.WriteLine("Dame Modelo");
+            vca.Modelo = Console.ReadLine();
+            Console.WriteLine("Dame Año");
+            vca.Anio = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("dame capacidad de carga");
+            vca.CapacidadCarga = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Dame tipo de llantas");
+            vca.TipodeLlanta = Console.ReadLine();
 
-            diccionariocamion.Add(id2, new VehiculoCamion(vca.Id_vehiculo, vca.Marca, vca.Modelo, vca.Anio, vca.CapacidadCarga));
+
+            diccionariocamion.Add(id2, new VehiculoCamion(vca.Id_vehiculo, vca.Marca, vca.Modelo, vca.Anio, vca.CapacidadCarga, vca.TipodeLlanta));
         }
         public void MostrarCoche()
         {
@@ -36,6 +63,7 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
                 Console.WriteLine($"Modelo {coch.Value.Modelo} ");
                 Console.WriteLine($"Anio {coch.Value.Anio} ");
                 Console.WriteLine($"Numero de puertas {coch.Value.NoPuertas} ");
+                Console.WriteLine($"color {coch.Value.Color}");
 
             }
         }
@@ -48,6 +76,7 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
                 Console.WriteLine($"Modelo {cami.Value.Modelo} ");
                 Console.WriteLine($"Anio {cami.Value.Anio} ");
                 Console.WriteLine($"Capacidad de carga {cami.Value.CapacidadCarga}");
+                Console.WriteLine($"Tipo de llanta {cami.Value.TipodeLlanta}");
 
             }
         }
@@ -81,6 +110,8 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
             coche.Value.Anio = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Dame numero de puertas");
             coche.Value.NoPuertas = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame el color");
+            coche.Value.Color = Console.ReadLine();
 
         }
         public void ActualizarCamion()
@@ -99,6 +130,8 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
             cami.Value.Anio = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Dame capacidad de carga");
             cami.Value.CapacidadCarga = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame tipo de llantas");
+            cami.Value.TipodeLlanta = Console.ReadLine();
 
         }
     }
