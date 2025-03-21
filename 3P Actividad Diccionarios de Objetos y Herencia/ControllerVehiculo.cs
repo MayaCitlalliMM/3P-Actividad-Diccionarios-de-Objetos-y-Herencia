@@ -16,16 +16,16 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         public void addCoche()
         {
             Console.WriteLine("Dame matricula: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id1 = Convert.ToInt32(Console.ReadLine());
 
-            diccionariocoche.Add(id,new VehiculoCoche(vco.Id_vehiculo,vco.Marca,vco.Modelo,vco.Anio,vco.NoPuertas));
+            diccionariocoche.Add(id1,new VehiculoCoche(vco.Id_vehiculo,vco.Marca,vco.Modelo,vco.Anio,vco.NoPuertas));
         }
         public void addCamion()
         {
             Console.WriteLine("Dame matricula: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id2 = Convert.ToInt32(Console.ReadLine());
 
-            diccionariocamion.Add(id, new VehiculoCamion(vca.Id_vehiculo, vca.Marca, vca.Modelo, vca.Anio, vca.CapacidadCarga));
+            diccionariocamion.Add(id2, new VehiculoCamion(vca.Id_vehiculo, vca.Marca, vca.Modelo, vca.Anio, vca.CapacidadCarga));
         }
         public void MostrarCoche()
         {
@@ -54,22 +54,51 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         public void EliminarCoche()
         {
             Console.WriteLine("Dame id a eliminar");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id1 = Convert.ToInt32(Console.ReadLine());
              
-            diccionariocoche.Remove(id);
+            diccionariocoche.Remove(id1);
         }
         public void EliminarCamion()
         {
             Console.WriteLine("Dame id a eliminar");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id2 = Convert.ToInt32(Console.ReadLine());
 
-            diccionariocamion.Remove(id);
+            diccionariocamion.Remove(id2);
         }
         public void ActualizarCoche()
         {
             Console.WriteLine("Dame id a actualizar");
-            int id = Convert.ToInt32(Console.ReadLine());
-             var coche = diccionariocoche.FirstOrDefault(x =)
+            int id1 = Convert.ToInt32(Console.ReadLine());
+            var coche = diccionariocoche.FirstOrDefault(x => x.Value.Id_vehiculo == id1);
+
+            Console.WriteLine("Dame nuevo ID:");
+            coche.Value.Id_vehiculo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame marca");
+            coche.Value.Marca = Console.ReadLine();
+            Console.WriteLine("Dame modelo");
+            coche.Value.Modelo = Console.ReadLine();
+            Console.WriteLine("Dame anio");
+            coche.Value.Anio = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame numero de puertas");
+            coche.Value.NoPuertas = Convert.ToInt32(Console.ReadLine());
+
+        }
+        public void ActualizarCamion()
+        {
+            Console.WriteLine("Dame id a actualizar");
+            int id2 = Convert.ToInt32(Console.ReadLine());
+            var cami = diccionariocamion.FirstOrDefault(i => i.Value.Id_vehiculo == id2);
+
+            Console.WriteLine("Dame nuevo ID:");
+            cami.Value.Id_vehiculo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame marca");
+            cami.Value.Marca = Console.ReadLine();
+            Console.WriteLine("Dame modelo");
+            cami.Value.Modelo = Console.ReadLine();
+            Console.WriteLine("Dame anio");
+            cami.Value.Anio = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame capacidad de carga");
+            cami.Value.CapacidadCarga = Convert.ToInt32(Console.ReadLine());
 
         }
     }
